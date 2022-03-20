@@ -11,6 +11,7 @@ import outMap from '../../maps/out.json'
 import Map from '../entities/Map'
 import Player from '../entities/Player'
 import Login from './Login'
+import { useUser } from '../store/user'
 import Players from '../entities/Players'
 
 // {
@@ -38,8 +39,6 @@ export default function Game () {
   const canvas = useRef<HTMLDivElement>(null)
   const [ui, setUI] = useState(false)
   const [username] = useUser()
-
-  console.log('USERNAME', username)
 
   const bootstrapGame = () => {
     var keys: Keys = {}
@@ -164,7 +163,4 @@ export default function Game () {
       ></div>
     </>
   )
-}
-function useUser (): [any] {
-  throw new Error('Function not implemented.')
 }

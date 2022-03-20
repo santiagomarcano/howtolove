@@ -253,7 +253,6 @@ export default class Players {
         if (p && p.facing) {
           this.playerSprites[player].x = p.x;
           this.playerSprites[player].y = p.y;
-          // console.log("Facing is", facing);
           switch (p.facing) {
             case "up":
               this.playerSprites[player].textures = this.animations.walkUp;

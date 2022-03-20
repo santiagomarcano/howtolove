@@ -1,9 +1,5 @@
-import GUN from 'gun'
-import 'gun/sea'
-// import 'gun/axe'
 import {
   createContext,
-  cloneElement,
   ReactNode,
   useContext,
   useEffect,
@@ -16,7 +12,7 @@ import { io } from 'socket.io-client'
 //   peers: ['http://192.168.0.177:4000/gun']
 // })
 
-export const socket = io('http://localhost:4000')
+export const socket = io(import.meta.env.VITE_SERVER as any)
 
 export const user = null
 
@@ -42,11 +38,7 @@ export function UserProvider ({ children }: { children: ReactNode }) {
         Players.activePlayers = data
       })
       socket.on('chat', data => {
-        console.log('chat!', data)
         setMessages(data)
-      })
-      socket.on('ping', () => {
-        console.log('pinging...')
       })
     })
   }, [])
