@@ -11,7 +11,7 @@ import { io } from 'socket.io-client'
 // export const db = GUN({
 //   peers: ['http://192.168.0.177:4000/gun']
 // })
-
+console.log('VITE_SERVER', import.meta.env.VITE_SERVER)
 export const socket = io(import.meta.env.VITE_SERVER as any)
 
 export const user = null
