@@ -1,0 +1,28 @@
+{
+  "name": "howtolove",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@pixi/tilemap": "^3.2.2",
+    "cors": "^2.8.5",
+    "gun": "^0.2020.1236",
+    "pixi.js": "^6.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "socket.io": "^4.4.1",
+    "socket.io-client": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@vitejs/plugin-react": "^1.0.7",
+    "express": "^4.17.3",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0"
+  }
+}
