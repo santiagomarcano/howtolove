@@ -214,15 +214,19 @@ export default class Players {
   }
 
   drawOne(player: string): void {
-    const p: AnimatedSprite = new PIXI.AnimatedSprite(this.animations.walkLeft);
-    p.scale.set(this.scale, this.scale);
-    p.anchor.set(0.5); // Set origin to center
-    p.loop = false; // Avoid loops
-    p.animationSpeed = 0.2;
-    this.map.container.addChild(p); // Important add to map container
-    p.x = Players.activePlayers[player].x;
-    p.y = Players.activePlayers[player].y;
-    this.playerSprites[player] = p;
+    if (player !== this.username) {
+      const p: AnimatedSprite = new PIXI.AnimatedSprite(
+        this.animations.walkLeft
+      );
+      p.scale.set(this.scale, this.scale);
+      p.anchor.set(0.5); // Set origin to center
+      p.loop = false; // Avoid loops
+      p.animationSpeed = 0.2;
+      this.map.container.addChild(p); // Important add to map container
+      p.x = Players.activePlayers[player].x;
+      p.y = Players.activePlayers[player].y;
+      this.playerSprites[player] = p;
+    }
   }
 
   drawAll(): void {
